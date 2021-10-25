@@ -171,26 +171,6 @@ UPDATE is **column** wise operations!
 
 <br>
 
-### How to do number 2 on the HW:
-
-Need to do a three way join between T2, T4, T6
-
-Step 1:
-| c  |    p                  | max(q)_oct |           
-|   ---      |     ---             |       ---  |
-| T          | the query for T     |            |            
-| complex    | 2000 line sql query |            |            
-We are grouping by customer and p
-
-Step 2:
-
-```
-WITH T1 AS 
-(
-
-)
-```
-
 ### **October 25th**
 ---
 
@@ -224,12 +204,6 @@ BLOB vs CLOB
 
 
 ### **Homework Question 3**
-
-base table:
-| MO  |    Prod                  | sum(q) |           
-|   ---      |     ---             |       ---  |
-| 1        | Apple    |            |            
-| complex    | 2000 line sql query |            |  
 
 ```
 WITH base AS (
