@@ -37,3 +37,28 @@ $> No match of right hand side
 
 ## NO assignments in Erlang.
 
+
+<br>
+
+### October 27, 2021
+
+---
+
+Erlang syntax continued
+
+```
+{X, Y} = { {1, 2}, true }
+> X.
+> {1,2}
+> Y.
+> true
+
+f(). = to clear all memory.
+
+Match X with 1, then match X with 2
+{X,X} = {1,2} 
+> exception error: no match
+
+
+
+```

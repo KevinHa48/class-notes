@@ -218,5 +218,107 @@ GROUP BY MO
 
 ```
 
+### **October 27th**
+---
+
+What is the siginificance of Question 2 on the HW?
+- The difficulty comes in from trying to extract extra details, such as the date from a group by.
+- We solve this by creating extra joins with main sales table.
+
+HW2 Revision
+- Need to use a full outer join at the end.
+
+Question 4:
+
+Group by product and month, get the sums of each product in that month, take the max and min.
+
+<br>
+
+### **November 1st**
+
+---
+
+## **Chapter 7: Relational Database Design**
+
+### **All about OLTP**
+
+This unit is very conceptual...
+
+OLTP:
+ - Maintenance
+ - Updates
+ - Write-oriented
+
+OLAP:
+- Analytical
+- Read
+- Fact/finding
+- Knowledge discovery
+
+ETL: **E**xtract, **T**ransform, **L**oad
+- Transitioning from one type of DB to another
+
+For OLTP we want to minimize updates, OLAP minimize joins.
+
+What are "good" tables?
+1. Table about 1 "type" of thing (eg. cust, acct, loan, ... NOT cust w/acct or loan, etc).
+2. There is one key column, where all the other columns in the table are uniquely identified by that key column. Key column to identify, other columns to describe what the entities are.
+3. BCNF: Boyce-Codd Normal Form or 3NF: 3rd Normal Form.
+
+
+![Good table](./images/good-tables.jpg)
+
+Design Process:
+
+Table Schema -> is X good? based on FD? 
+
+GOOD -> then **do nothing** (design process is done for that schema) 
+
+NOT GOOD -> Decompose it. Seperate and split into multiple schemas.  
+
+"Set of rules" or Functional Dependencies (FD)
+
+![Good table](./images/design-process.jpg)
+
+<br>
+
+### **November 3rd**
+
+---
+### **Chapter 7 Continued**
+
+When you have more than one thing in the table you will have repitition of the data on your table.
+
+A good sign that work needs to be done on your table.
+
+Splitting / Decomposing technique is very important.
+
+Functional Dependencies:
+
+- Left hand side column(s) functionally determines what shows up on the right hand side.
+- If I know what is on the left side then I'll know what will be on the right hand side.
+- Functional Dependency is similar to the key concept and is used to describe the idea behind keys. 
+
+If I know the CWID then I should know the major for example, and duplicate entries should be easy to determine as well.
+
+
+### **November 5th**
+
+---
+
+### **Chapter 7 continued again...**
+
+Decomposition of the tables should be done in a way so that we can compose it again through a natural join.
+
+**LLJD**: Loss Less Join Decomposition
+- AKA, we get the exact same table back, no modification of anything.
+- Lossy Join Decomposition is not good. Lossy doesn't necessarily mean you're losing data, it means you're losing the original symantics or structure of the original table.
+- Check slide 7.7 for a good example.
+
+Functional Depedencies:
+- alpha determines beta (alpha -> beta)
+- alpha and beta are just a set of columns
+- 
+
 
 
