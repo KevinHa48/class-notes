@@ -318,7 +318,15 @@ Decomposition of the tables should be done in a way so that we can compose it ag
 Functional Depedencies:
 - alpha determines beta (alpha -> beta)
 - alpha and beta are just a set of columns
-- 
+- We use the idea of FD to determine the concept of keys.
+- Examples:
+  - SSN -> Name
+  - CWID -> Addr.
+  - In this case SSN and CWID would be primary keys.
+
+When you have a column that functionally determines all of the columns, we know that said column will be a key.
+
+We use functional dependencies to determine what a key is
 
 
 
