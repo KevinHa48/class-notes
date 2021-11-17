@@ -328,5 +328,140 @@ When you have a column that functionally determines all of the columns, we know 
 
 We use functional dependencies to determine what a key is
 
+<br>
+
+### **November 8th**
+
+---
+### **Chapter 7 Continued Again**
+
+"dimension" == group by attributes
+
+If RHS is a subset of LHS
+
+Then it is called a trivial functional dependency.
+
+(Name, Addr) -> Name
+
+Closure of Functional Dependencies: All possible FDs which will be used as a part of the design process. 
+
+Interesting aspect:
+
+If I know A determines B (A->B) and I know B determines C (B->C) then I can infer that A->C.
 
 
+<br>
+
+### **November 10th**
+
+---
+### **Chapter 7 Again: Focusing on the two design steps**
+
+Reminder: Closures come from business people. Denoted by (FD)+
+
+Algorithm we'll be using: 
+C.A.S - **C**losure of **A**ttribute **S**ets.
+
+
+If the table contains more than one functional dependency that is not a superkey in the table then it is in violation of BCNF, we normally just "kick it out" of the table. 
+
+**BCNF - Only one thing**
+
+The Kim Family Example:
+
+Sam | Mia | Dan | Claire | Helen | Emily
+
+- Mia: Wife
+- Dan: Son
+- Claire: Son's Wife
+- Helen & Emily: Daughter.
+
+*What if Dan gets his own family?*
+
+**We need to remove Dan and Claire from the Kim Family as they are considered seperate households.**
+
+
+<br>
+
+R => has > 1 thing/family based on alpha -> beta
+
+In which alpha is not a superkey.
+
+R1 = (alpha, beta)
+
+R2 = (R - beta + alpha) *(In the context of Kim's family, I am saying remove all of Dan's family but keep Dan himself.)*
+
+<br>
+
+**When and why do we need to do this?**
+
+To maintain BCNF.
+
+**AND**
+
+IF the left hand side is a superkey for only a subset of the table, then we should do the everything above.
+
+<br>
+
+BCNF vs 3NF:
+- BCNF is stricter
+- BCNF is split trigger happy
+- Dependency Preservation is not guarenteed when you use BCNF, DP is guaranteed when doing 3NF.
+
+
+<br>
+
+### **November 12th**
+
+---
+
+### **Chapter 7 again.**
+
+What to expect for Quiz 3:
+
+1. What makes a good table
+2. Generate closure of FD
+3. Question about CAS
+
+BCNF:
+1. Trivial Key
+2. LHS must be a key
+
+<br>
+
+### **November 15th**
+
+---
+
+### **Chapter 7 still continued...**
+
+**Homework 2 Question 1:**
+
+group by customer, product, month, state
+
+Create these tables seperately
+1. Aggregate product
+2. Aggregate month
+3. Aggregate state
+
+4 tables needed.
+
+
+**Homework 2 Question 2:**
+
+Find the average for each month as the first step from the sales table and then do a self join using the month before and the month after.
+
+For the month of 1 and 12, the month before will be null and the month after will be null, respectively.
+
+base natural join base
+
+(mo = mo - 1)
+
+(mo = mo + 1)
+
+
+**Homework 2 Question 3:**
+
+Count how many quantities are less than or equal to the respective quantity you are looking at.
+
+If you come across a number that you know is x above and x below then you know it must be the median.
