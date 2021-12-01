@@ -465,3 +465,108 @@ base natural join base
 Count how many quantities are less than or equal to the respective quantity you are looking at.
 
 If you come across a number that you know is x above and x below then you know it must be the median.
+
+### **November 17th**
+
+---
+
+### **Pre-quiz review**
+
+LLJD -> Don't lose integrity of data.
+
+BCNF:
+1. is (alpha -> beta) trivial?
+2. is alpha a superkey?
+
+3NF:
+3. Is alpha part of the candidate key.
+4. individual attribute in alpha a part of the candidate key.
+
+Dependency preserving Decomposition
+
+**Skip 22-24 in the slides**
+
+(F) -> (F+)
+
+F = determined by the business
+
+F+ = (closure) determined by the CS people.
+
+Transitioning from business to CS requires Armstrong's axioms.
+
+Axioms:
+1. If the LHS is a superset of the RHS or RHS is subset of LHS then LHS determines RHS (Reflexive axiom).
+2. If alpha -> beta, and anything gets added to either side, then it must apply to both. alpha * gamma -> beta * gamma.
+
+Should be able to prove the additional axioms (union, decomposition, pseudotransitivity).
+
+<br>
+
+### **November 22nd**
+
+---
+
+Axioms guarentee sound and completeness
+
+- Sound: Accurate
+- Complete: Get all the functional dependenices.
+
+1. Reflexivity
+2. Transitivity
+3. Augmentation
+
+Why does result get initalized to alpha? To satisfy the reflexivity property. 
+
+if LHS is in results then RHS should also be in the results. This is a property of transitivity. 
+
+(BD)+ = {BD} <- The minimal attribute set closure.
+
+Slide 31:
+
+Result: (AG)+ = [A G *B C H I*] = R
+
+(A)+ = [A B C G]
+
+(G)+ = [G]
+
+(AG)+ is the candidate key because A+ and G+ are not superkeys. AKA none of the subsets are superkeys.
+
+1. Find all possible combinations for LHS.
+2. Run CAS algorithm on each of the LHS generated from the first step.
+3. For each RHS, find all possible combinations.
+
+CAS algorithm
+
+<br>
+
+### **November 29th**
+
+---
+
+How is F -> F+ formed?
+- Armstrong's Axioms
+- CAS Algorithm
+
+Attribute Closure Algorithm:
+
+1. Find all possible LHS
+   - AKA find all possible combinations of columns of R
+   - eg. R(ABC) -> A, B, C, AB, AC, BC, ABC
+2. Run CAS on each of the generated LHS ^ (A+, B+, ...)
+3. From each RHS from step 2, find all combinations
+   - (A)+ -> AB => A -> A, A -> B, A -> AB
+
+Homework 2 Problem 1 Help:
+
+- 2 copies of the table
+
+```
+... sum(s2.q)
+from sales s1, sales s2
+where s1.x = s2.x ... s1.prod != s2.prod
+group by s1.prod
+
+```
+
+
+
