@@ -520,7 +520,7 @@ Why does result get initalized to alpha? To satisfy the reflexivity property.
 if LHS is in results then RHS should also be in the results. This is a property of transitivity. 
 
 (BD)+ = {BD} <- The minimal attribute set closure.
-
+ 
 Slide 31:
 
 Result: (AG)+ = [A G *B C H I*] = R
@@ -567,6 +567,64 @@ where s1.x = s2.x ... s1.prod != s2.prod
 group by s1.prod
 
 ```
+
+
+### **December 3rd**
+
+---
+
+<br>
+
+### **December 6th**
+
+---
+
+F -> F+
+
+Logically equivalent.
+
+Slide 47 steps:
+
+1. Is the LHS trivial?
+2. Is the LHS a superkey?
+   
+Prove JK is a superkey (Slide 48)
+
+```
+R = (J, K, L)
+F = {JK -> L
+    L -> K}
+```
+
+Steps: 
+
+1. JK -> JK (reflexivity)
+2. JK -> L (given
+3. JK -> JKL (union)
+
+Therefore JK is a SK for R(JKL)
+
+<br>
+
+### **December 8th**
+---
+
+How do you prove lossless decomposition
+
+A B C D E
+
+(ABC) (CDE)
+
+Where C is a superkey in ABC and C is foreign key in CDE
+
+Topics:
+
+- Question about the HW 2 queries
+- CAS question
+- BCNF decomposition question
+
+
+
 
 
 
